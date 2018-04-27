@@ -102,50 +102,54 @@ function userSelectEqual() {
 	}
 }
 
-function arithmaticMaker (arg) {
-	arg = arg.join('');
+function arithmaticMaker (arithmaticContainer) {
+	arithmaticContainer = arithmaticContainer.join('');
 
-	if(arg.match(/[+-/*]{2,}/)) {
-		arg = [];
+	if(arithmaticContainer.match(/[+-/*]{2,}/)) {
+		arithmaticContainer = [];
 		var errorMessage = "Error";
 		document.getElementById('screen-output').innerHTML = errorMessage;
 	} else {
-		if(arg.match(/[+]/)) {
-			arg = arg.split('+');
-			add(arg[0], arg[1]);
-		} else if(arg.match(/[-]/)){
-			arg = arg.split('-');
-			subtract(arg[0], arg[1]);
-		} else if(arg.match(/[/]/)){
-			arg = arg.split('/');
-			divide(arg[0], arg[1]); 
-		} else if(arg.match(/[*]/)){
-			arg = arg.split('*');
-			multiply(arg[0], arg[1]);
+		if(arithmaticContainer.match(/[+]/)) {
+			arithmaticContainer = arithmaticContainer.split('+');
+			add(arithmaticContainer[0], arithmaticContainer[1]);
+		} else if(arithmaticContainer.match(/[-]/)){
+			arithmaticContainer = arithmaticContainer.split('-');
+			subtract(arithmaticContainer[0], arithmaticContainer[1]);
+		} else if(arithmaticContainer.match(/[/]/)){
+			arithmaticContainer = arithmaticContainer.split('/');
+			divide(arithmaticContainer[0], arithmaticContainer[1]); 
+		} else if(arithmaticContainer.match(/[*]/)){
+			arithmaticContainer = arithmaticContainer.split('*');
+			multiply(arithmaticContainer[0], arithmaticContainer[1]);
 		} else {
 			console.log("Error");
 		}
 	}
 }
-
-function add(arg, arg1) {
-  var answer = Number(arg) + Number(arg1);
+5
+function add(number, number2) {
+  var answer = Number(number) + Number(number2);
   document.getElementById('screen-output').innerHTML = answer;
+  number = answer;
 }
 
-function subtract(arg, arg1) {
-  var answer = Number(arg) - Number(arg1);
+function subtract(number, number2) {
+  var answer = Number(number) - Number(number2);
   document.getElementById('screen-output').innerHTML = answer;
+  number = answer;
 }
 
-function multiply(arg, arg1) {
-  var answer = Number(arg) * Number(arg1);
+function multiply(number, number2) {
+  var answer = Number(number) * Number(number2);
   document.getElementById('screen-output').innerHTML = answer;
+  number = answer;
 }
 
-function divide(arg, arg1) {
-  var answer = Number(arg) / Number(arg1);
+function divide(number, number2) {
+  var answer = Number(number) / Number(number2);
   document.getElementById('screen-output').innerHTML = answer;
+  number = answer;
 }
 
 
